@@ -1,9 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".To_Do_Tasks">
+    tools:context=".To_Do_Tasks"
+    android:orientation="vertical"
+    android:gravity="center">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/addTaskButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add To Do Task" />
+
+    <Button
+        android:id="@+id/updateTaskButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update a Task" />
+
+    <Button
+        android:id="@+id/viewAllTasksButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View All Tasks" />
+
+    <Button
+        android:id="@+id/clearTasks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Clear Tasks" />
+</androidx.appcompat.widget.LinearLayoutCompat>

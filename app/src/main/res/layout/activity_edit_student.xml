@@ -4,9 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Show_Students"
-    android:orientation="vertical">
+    tools:context=".Edit_Student"
+    android:orientation="vertical"
+    android:textAlignment="center">
 
-
-
+    <ListView
+        android:id="@+id/studentsListView"
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp" />
 </androidx.appcompat.widget.LinearLayoutCompat>

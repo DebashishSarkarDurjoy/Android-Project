@@ -10,14 +10,22 @@
 
     <Button
         android:id="@+id/showFormButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Add Student" />
 
     <Button
-        android:id="@+id/showStudentButton"
-        android:layout_width="wrap_content"
+        android:id="@+id/editStudentButton"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="View Student" />
+        android:text="Edit Student" />
+
+    <Button
+        android:id="@+id/clearStudents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Clear Students" />
+
+
 
 </androidx.appcompat.widget.LinearLayoutCompat>
