@@ -2,20 +2,18 @@ package com.example.newproject;
 import com.example.newproject.Add_Task;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TableLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class View_Tasks extends AppCompatActivity {
     private ListView tasksListView;
-    private TableLayout tableLayout;
-    private TextView allTasksTextView;
     private DatabaseManager2 db;
 
     @Override
@@ -33,6 +31,14 @@ public class View_Tasks extends AppCompatActivity {
         else {
             Toast.makeText(View_Tasks.this, "Error", Toast.LENGTH_SHORT).show();
         }
+
+        tasksListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String item = parent.getItemAtPosition(position).toString();
+                updateToDoTask(item);
+            }
+        });
     }
 
     public boolean showRecords() {
@@ -44,5 +50,11 @@ public class View_Tasks extends AppCompatActivity {
         ArrayAdapter<String> arrayAdpt = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, tableContent);
         tasksListView.setAdapter(arrayAdpt);
         return true;
+    }
+
+    public void updateToDoTask(String item) {
+        Intent intent = new Intent(this, Update_Task.class);
+        intent.putExtra("item", item);
+        startActivity(intent);
     }
 }

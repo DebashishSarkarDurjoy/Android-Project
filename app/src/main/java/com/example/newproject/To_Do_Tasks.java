@@ -37,7 +37,7 @@ public class To_Do_Tasks extends AppCompatActivity {
         updateTaskButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showUpdateTaskActivity(v);
+                showAllTaskActivity(v);
             }
         });
 
@@ -55,6 +55,7 @@ public class To_Do_Tasks extends AppCompatActivity {
             }
         });
     }
+
 
     public void showAddTaskActivity(View v) {
         Intent intent = new Intent(this, Add_Task.class);

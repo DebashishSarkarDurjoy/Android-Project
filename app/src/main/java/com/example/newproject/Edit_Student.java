@@ -2,6 +2,7 @@ package com.example.newproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -32,6 +33,16 @@ public class Edit_Student extends AppCompatActivity {
             Toast.makeText(Edit_Student.this, "Error", Toast.LENGTH_SHORT).show();
         }
 
+
+        studentsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String item = parent.getItemAtPosition(position).toString();
+                Toast.makeText(Edit_Student.this,  String.valueOf(position)+ " Selected!", Toast.LENGTH_SHORT).show();
+                updateStudent(item);
+            }
+        });
+
     }
 
     /*
@@ -47,5 +58,11 @@ public class Edit_Student extends AppCompatActivity {
         ArrayAdapter<String> arrayAdpt = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, tableContent);
         studentsListView.setAdapter(arrayAdpt);
         return true; // return true upon completion
+    }
+
+    public void updateStudent(String item) {
+        Intent intent = new Intent(this, Update_Student_Form.class);
+        intent.putExtra("item", item);
+        startActivity(intent);
     }
 }

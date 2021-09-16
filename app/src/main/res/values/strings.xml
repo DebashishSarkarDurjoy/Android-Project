@@ -6,7 +6,7 @@
         <item>Other</item>
     </string-array>
     <string-array name="status">
-        <item>Not Complete</item>
+        <item>Incomplete</item>
         <item>Complete</item>
     </string-array>
     <string name="title_activity_add_task">Add_Task</string>

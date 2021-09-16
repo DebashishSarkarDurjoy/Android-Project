@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NewProject">
-        <activity android:name=".Edit_Student" android:parentActivityName=".Students" android:label="Edit Student" ></activity>
+        <activity android:name=".Update_Student_Form" android:parentActivityName=".Students" android:label="Update Student Details"></activity>
+        <activity
+            android:name=".Edit_Student"
+            android:label="Edit Student"
+            android:parentActivityName=".Students" />
         <activity
             android:name=".View_Tasks"
             android:label="View All Tasks"
@@ -38,7 +42,9 @@
             android:name=".Students"
             android:label="Students"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".MainActivity" android:label="Student Management System">
+        <activity
+            android:name=".MainActivity"
+            android:label="Student Management System">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -15,7 +15,6 @@ public class DatabaseManager2 {
     private SQLiteDatabase db;
     private Context context;
     private String tasksTable = "Tasks";
-    private String studentsTable = "Students";
 
     public DatabaseManager2(Context c) {
         this.context = c;
@@ -65,6 +64,24 @@ public class DatabaseManager2 {
             cursor.close();
         }
         return productRows;
+    }
+
+    public void updateTask(String taskName, String location, String status) {
+        synchronized (this.db) {
+            ContentValues contentValues = new ContentValues();
+            contentValues.put("name", taskName);
+            contentValues.put("location", location);
+            contentValues.put("status", status);
+
+            db.update(tasksTable, contentValues, "name = " + taskName, null);
+
+        }
+    }
+
+    public void deleteTaskRecord(String taskName) {
+        synchronized (this.db) {
+            db.delete(tasksTable, "name = " + taskName, null);
+        }
     }
 
     // Tasks Table functions ------ END

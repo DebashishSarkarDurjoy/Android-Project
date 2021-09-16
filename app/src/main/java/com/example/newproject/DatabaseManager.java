@@ -71,6 +71,28 @@ public class DatabaseManager {
         return productRows;
     }
 
+    public boolean updateRecordStudent(String studentNumber, String firstName, String lastName, String gender, String course, String age, String address) {
+        synchronized (this.db) {
+            ContentValues value = new ContentValues();
+            value.put("studentNumber", studentNumber);
+            value.put("firstName", firstName);
+            value.put("lastName", lastName);
+            value.put("gender", gender);
+            value.put("course", course);
+            value.put("age", age);
+            value.put("address", address);
+
+            db.update(studentsTable, value, "studentNumber = " + studentNumber, null);
+            return true;
+        }
+    }
+
+    public void deleteStudentRecord(String studentNumber) {
+        synchronized (this.db) {
+            db.delete(studentsTable, "studentNumber = " + studentNumber, null);
+        }
+    }
+
     public void clearRecordsStudents()
     {
         db = helper.getWritableDatabase();
